@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "PropiedadesPOO.Herencia.Main",
+            "projectName": "Programacion-3_dce6883"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "PropiedadesPOO.Polimorfismo.Main",
+            "projectName": "Programacion-3_dce6883"
+        },
+        {
+            "type": "java",
             "name": "Ejecutar Java",
             "request": "launch",
             "mainClass": "${file}"
