@@ -8,6 +8,20 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "com.cerp.Main",
+            "projectName": "pooshowcase"
+        },
+        {
+            "type": "java",
+            "name": "TeoricoReader",
+            "request": "launch",
+            "mainClass": "com.cerp.TeoricoReader",
+            "projectName": "pooshowcase"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "PropiedadesPOO.Herencia.Main",
             "projectName": "Programacion-3_dce6883"
         },

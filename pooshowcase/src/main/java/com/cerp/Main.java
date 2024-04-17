@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import com.cerp.Controlador.InicioControlador;
 import com.cerp.Modelo.Pregunta;
 import com.cerp.Vista.InicioVista;
-
 
 /**
  * @file Main.java
@@ -31,7 +31,7 @@ public class Main {
     public static void main(String[] args) {
         
         // Crear instancia de FileHandler para cargar las preguntas desde preguntas.data
-        FileHandler<Pregunta> fileHandler = new FileHandler<Pregunta>("PreguntasDelCursoMVC\\preguntas.data");
+        FileHandler<Pregunta> fileHandler = new FileHandler<Pregunta>("com\\cerp\\preguntas.data");
 
         List<Pregunta> modelo = new ArrayList<>();        
 
@@ -49,8 +49,7 @@ public class Main {
 
         /*InicioVista vistaInicio = new InicioVista();
         vistaInicio.setVisible(true);*/
-
-         
+    
         InicioVista vistaInicio = new InicioVista(fileHandler);
         InicioControlador controlador = new InicioControlador(modelo, vistaInicio);
         vistaInicio.setControlador(controlador);
@@ -63,7 +62,8 @@ public class Main {
         vistaAdmin.getConfirmarButton().addActionListener(controladorAdmin);
         vistaAdmin.getAtrasButton().addActionListener(controladorAdmin);
         vistaAdmin.getLimpiarButton().addActionListener(controladorAdmin);*/
-
+        
+        
         
     }
 }

@@ -1,0 +1,4 @@
+Es la capacidad de simplificar un problema al ocultar detalles innecesarios. Tambien nos permite modelar las relaciones entre distintos objetos.
+La herencia permite que una clase herede atributos y metodos de otra, evitando la duplicacion de codigo.
+Es la capacidad que tienen los objetos de diferentes clases de responder de forma desigual a un mismo metodo.
+Es el mecanismo que nos permite ocultar detalles internos de una clase, dejando visible aquello que queremos que interactue con todo lo externo al codigo.

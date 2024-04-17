@@ -1,10 +1,11 @@
 package com.cerp.Vista;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
+import java.awt.GridLayout; //Para crear los 4 botones.
 import javax.swing.*;
 
 import com.cerp.FileHandler;
@@ -23,58 +24,49 @@ import com.cerp.Modelo.Pregunta;
      private JMenuItem menuItemAdmin;
      private JMenuItem menuItemPreguntas;
      private JLabel numPreguntas; 
-
+     //UPDATE 1.1 
+     private JLabel mensaje = new JLabel("Bienvenido al software de repaso de conceptos de la POO de 3ro!");
+        
+     JPanel fourButtons = new JPanel(new GridLayout(2, 2, 10, 10)); //2 filas y 2 columnas
+     JButton boton1 = new JButton("Abstraccion");
+     JButton boton2 = new JButton("Herencia");
+     JButton boton3 = new JButton("Polimorfismo");
+     JButton boton4 = new JButton("Encapsulamiento");
+    
     private FileHandler<Pregunta> fileHandler;
     private InicioControlador controlador;
- 
+
      public InicioVista(FileHandler<Pregunta> fileHandler) {
-         super("Conceptos de la POO Edit 1.1 by Fran :D");
+         super("Conceptos de la POO - Edit 1.1 by Fran :D");
 
          this.fileHandler = fileHandler;
-         
          initComponents();
-            /* 
-         this.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                controlador.guardarPreguntas();
-                System.exit(0);
-            }
-        }); */
      }
  
      private void initComponents() {
          // Crear la barra de menú y agregarla a la ventana
          menuBar = new JMenuBar();
          setJMenuBar(menuBar);
- 
-         // Crear los elementos del menú y agregarlos directamente a la barra de menú
-         //menuItemAdmin = new JMenuItem("Administración");
-         //menuItemAdmin.addActionListener(this);
-         //menuBar.add(menuItemAdmin);
- 
-         menuItemPreguntas = new JMenuItem("Repasar conceptos");
-         //menuItemPreguntas.addActionListener(this);
-         menuBar.add(menuItemPreguntas);
-         menuItemPreguntas.setBackground(Color.green);
- 
+
+         //Update 1.1
+         menuBar.add(mensaje); //Mensaje Introductorio al programa
+
+        fourButtons.add(boton1);
+        fourButtons.add(boton2);
+        fourButtons.add(boton3);
+        fourButtons.add(boton4);
+        add(fourButtons); //agregamos el Jpanel a la vista principal.
+        
+
          // Panel para mostrar la pregunta
          JPanel inicioPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
- 
-         //numPreguntas = new JLabel("Hay en el sistema " + 4 +" preguntas");
-         //numPreguntas.setBounds(0, 180, 100, 200);
-         //inicioPanel.add(numPreguntas);
- 
+
          add(inicioPanel);
- 
          setSize(800, 400);
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          setLocationRelativeTo(null);
          setVisible(true);
      }
-  
-
-
     
     public FileHandler<Pregunta> getFileHandler() {
         return fileHandler;

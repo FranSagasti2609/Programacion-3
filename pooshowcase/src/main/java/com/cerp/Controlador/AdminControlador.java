@@ -47,6 +47,7 @@ public class AdminControlador implements ActionListener {
     }
 
     @Override
+    //Todo esto es about las preguntas, lo cual NO se va a utilizar.
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.getConfirmarButton()) {
             if (vista.getPreguntaField().getText().isEmpty() || vista.getOpcionesField().getText().isEmpty() || vista.getCorrectaField().getText().isEmpty()) {

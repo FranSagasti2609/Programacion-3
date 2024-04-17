@@ -20,11 +20,11 @@ public class InicioControlador implements ActionListener {
         vista.getItemAdmin().addActionListener(this);
         vista.getItemPreguntas().addActionListener(this);
 
-        vista.getLabelPreguntas().setText("Hay en el sistema " + modelo.size() +" preguntas");
+        //vista.getLabelPreguntas().setText("Hay en el sistema " + modelo.size() +" preguntas");
     }
 
     public void ActualizarControlador (){
-        vista.getLabelPreguntas().setText("Hay en el sistema " + modelo.size() +" preguntas");
+        //vista.getLabelPreguntas().setText("Hay en el sistema " + modelo.size() +" preguntas");
     }
 
     @Override
