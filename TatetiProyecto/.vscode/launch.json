@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Tateti",
+            "request": "launch",
+            "mainClass": "Tateti",
+            "projectName": "TatetiProyecto_bcda6cfb"
+        },
+        {
+            "type": "java",
             "name": "Run FX!",
             "request": "launch",
             "mainClass": "${file}",

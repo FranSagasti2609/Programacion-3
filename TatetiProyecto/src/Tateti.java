@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 
 public class Tateti extends Application {
 
@@ -22,12 +23,15 @@ public class Tateti extends Application {
     public void start(Stage primaryStage) {
         //Aqui establecemos el titulo de la ventana
         primaryStage.setTitle("TaTeTi Master!");
-
+        //Seteamos el icono
+        primaryStage.getIcons().add(new Image("image/tateti.png"));
         // Crear el tablero usando GridPane
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
         grid.setVgap(10);
         grid.setHgap(10);
+        
+        
 
         // Crear los botones del tablero
         for (int row = 0; row < 3; row++) {
