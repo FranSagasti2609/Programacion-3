@@ -14,7 +14,7 @@ public class OpenAIClient {
     //Se brinda el enlace de la API.
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
 
-    private String apiKey = "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";
+    private String apiKey;
 
     //Constructor de la clase (API URL es igual para todo objeto de la clase _static_)
     public OpenAIClient(String apiKey) {
