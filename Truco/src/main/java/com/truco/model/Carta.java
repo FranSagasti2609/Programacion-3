@@ -1,14 +1,17 @@
 package com.truco.model;
 
 public class Carta {
+    //Atributos de una carta, un palo (simbolito) y valor
     private String palo;
     private int valor;
 
+    //Constructor de la clase
     public Carta(String palo, int valor) {
         this.palo = palo;
         this.valor = valor;
     }
 
+    //Metodos get y set de los atributos
     public String getPalo() {
         return palo;
     }

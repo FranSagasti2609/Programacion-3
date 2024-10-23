@@ -12,6 +12,7 @@ public class JuegoController {
     private Partida partida;
     private List<Carta> mazo;
 
+    //Constructor
     public JuegoController() {
         this.mazo = crearMazo();
         this.partida = null;

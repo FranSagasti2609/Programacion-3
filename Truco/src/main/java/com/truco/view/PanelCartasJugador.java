@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PanelCartasJugador extends JPanel {
+    //atributos del panel
     private Jugador jugador;
     private List<JButton> botonesCartas;
 
@@ -22,21 +23,29 @@ public class PanelCartasJugador extends JPanel {
 
         // Agregar las cartas como botones ocultos
         for (Carta carta : jugador.getCartas()) {
-            JButton cartaButton = new JButton("Dorso"); // Mostrar "Dorso" para ocultar la carta
-            cartaButton.setPreferredSize(new Dimension(80, 120));
-            cartaButton.setToolTipText("Haz clic derecho para ver la carta");
+            JButton cartaButton = new JButton("Dorso"); // Mostramos el dorso para ocultar la carta
+            cartaButton.setPreferredSize(new Dimension(80, 120)); //tamaño de la figura
+            cartaButton.setToolTipText("Haz clic derecho para ver la carta"); //texto que se muestra al pasar el mouse arriba
 
             // Configurar eventos de clic derecho e izquierdo
             cartaButton.addMouseListener(new MouseAdapter() {
                 @Override
+                //Esto es cuando el mouse se clickea, veremos el click derecho e izquierdo
                 public void mouseClicked(MouseEvent e) {
-                    if (SwingUtilities.isRightMouseButton(e)) {
-                        // Clic derecho: Mostrar la carta
+
+                    if (SwingUtilities.isRightMouseButton(e)) { 
+                        
+                        //al pulsar el botón derecho
                         cartaButton.setText(carta.toString());
-                    } else if (SwingUtilities.isLeftMouseButton(e)) {
-                        // Clic izquierdo: Seleccionar la carta para jugar
+
+                    } else if (SwingUtilities.isLeftMouseButton(e)) { 
+                        
+                        //click izquierdo
                         VentanaPrincipal ventanaPrincipal = buscarVentanaPrincipal();
                         if (ventanaPrincipal != null) {
+                            //si es el turno del jugador correspondiente entonces AHI quito la carta visualmente
+                            if(ventanaPrincipal.turnoJugador(jugador)){
+        
                             ventanaPrincipal.jugarCarta(jugador, carta, cartaButton);
                             // Ocultar y desactivar la carta seleccionada
                             cartaButton.setEnabled(false);
@@ -44,6 +53,8 @@ public class PanelCartasJugador extends JPanel {
                             // Forzar la actualización de la interfaz gráfica
                             revalidate();
                             repaint();
+                            } else JOptionPane.showMessageDialog(null, "No es tu turno.");
+                            
                         }
                     }
                 }

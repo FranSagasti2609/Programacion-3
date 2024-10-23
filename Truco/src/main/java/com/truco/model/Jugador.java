@@ -1,19 +1,22 @@
 package com.truco.model;
-
+//Librerias necesarias para trabajar con una lista (de cartas)
 import java.util.ArrayList;
 import java.util.List;
 
 public class Jugador {
+    //Atributos de la clase
     private String nick;
     private int puntaje;
     private List<Carta> cartas; // Lista para las cartas en la mano
 
+    //Constructor de la clase
     public Jugador(String nick) {
         this.nick = nick;
-        this.puntaje = 0;
+        this.puntaje = 0; //su puntaje arranca en cero
         this.cartas = new ArrayList<>();
     }
 
+    //metodos get y set
     public String getNick() {
         return nick;
     }

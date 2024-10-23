@@ -74,13 +74,22 @@ public class VentanaPrincipal extends JFrame {
         repaint();
     }
 
+    //Método para verificar si el turno es actual
+    public boolean turnoJugador(Jugador jugador) {
+        return jugadores.indexOf(jugador) == turnoActual;
+    }
+    
+
+
     public void jugarCarta(Jugador jugador, Carta carta, JButton cartaButton) {
         // Verifica que sea el turno del jugador
         System.out.println("Jugador: " + jugadores.indexOf(jugador) + "--- turnoActual: " + turnoActual);
-        if (jugadores.indexOf(jugador) != turnoActual) {
+      
+        if (!turnoJugador(jugador)) {
             JOptionPane.showMessageDialog(this, "No es el turno de " + jugador.getNick());
             return;
         }
+        
 
         // Ocultar la carta seleccionada y hacerla no clickeable
         cartaButton.setEnabled(false);
