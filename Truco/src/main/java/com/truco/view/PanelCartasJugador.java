@@ -31,14 +31,27 @@ public class PanelCartasJugador extends JPanel {
             cartaButton.addMouseListener(new MouseAdapter() {
                 @Override
                 //Esto es cuando el mouse se clickea, veremos el click derecho e izquierdo
+                
+                //Gestionar el click derecho al MANTENER
+                public void mousePressed(MouseEvent e) {
+                    if (SwingUtilities.isRightMouseButton(e)) {
+                        // Al pulsar el botón derecho se muestran las cartas
+                        cartaButton.setText(carta.toString());
+                    }
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                    if (SwingUtilities.isRightMouseButton(e)) {
+                        // Al soltar el botón derecho se oculta la carta
+                        cartaButton.setText("Dorso");
+                    }
+                }
+
+                //Gestionar el click izquierdo AL PULSAR
                 public void mouseClicked(MouseEvent e) {
 
-                    if (SwingUtilities.isRightMouseButton(e)) { 
-                        
-                        //al pulsar el botón derecho
-                        cartaButton.setText(carta.toString());
-
-                    } else if (SwingUtilities.isLeftMouseButton(e)) { 
+                    if (SwingUtilities.isLeftMouseButton(e)) { 
                         
                         //click izquierdo
                         VentanaPrincipal ventanaPrincipal = buscarVentanaPrincipal();

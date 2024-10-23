@@ -61,9 +61,14 @@ public class JuegoController {
         }
     }
 
+
     public void terminarPartida() {
-        System.out.println("La partida ha terminado.");
-        this.partida = null;
+        for(Jugador jugador : this.partida.getJugadores()){
+            if(jugador.getPuntaje() > this.partida.getPuntajeMaximo()){
+                System.out.println("La partida ha terminado.");
+            this.partida = null;
+            }
+        }
     }
     
     public Jugador evaluarGanador(List<Carta> cartasJugadas, List<Jugador> jugadores) {
@@ -73,9 +78,8 @@ public class JuegoController {
 
     // Lista de fuerza para determinar el puntaje
     String[] ordenFuerza = {
-        "1 de Espadas", "1 de Bastos", "7 de Espadas", "7 de Oro",
-        "3", "2", "1", "12", "11", "10", "7", "6", "5", "4"
-    };
+        "1 E", "1 B", "7 E", "7 O",
+        "3", "2", "1", "12", "11", "10", "7", "6", "5", "4"};
 
     // Calcular los puntajes de las dos cartas basados en el orden de la lista de fuerza
     int[] puntajes = new int[2];
@@ -85,10 +89,12 @@ public class JuegoController {
 
         // Intentar encontrar coincidencia exacta en los primeros 4 elementos
         int indexExacto = indexOf(nombreCarta, ordenFuerza, 0, 4);
+        //Aca evaluan los bravos (4 cartas con mayor poder)
         if (indexExacto != -1) {
             // Si se encuentra una coincidencia exacta en los primeros 4 elementos
             puntajes[i] = 14 - indexExacto;
         } else {
+            //Aca se evaluan el resto de cartas (sin bravos)
             // Buscar coincidencia parcial a partir de la posición 5 en adelante
             int indexParcial = indexOf(nombreCarta, ordenFuerza, 4, ordenFuerza.length);
             if (indexParcial != -1) {
@@ -116,8 +122,8 @@ public class JuegoController {
         return jugadores.get(1); // Gana el jugador 2
     } else {
         // Si los puntajes son iguales, gana el primer jugador en la lista (jugador 1)
-        System.out.println("Empate, gana el primer jugador: " + jugadores.get(0).getNick());
-        return jugadores.get(0);
+        System.out.println("Es un empate.");
+        return null;
     }
     
 }

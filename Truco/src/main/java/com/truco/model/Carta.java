@@ -29,7 +29,27 @@ public class Carta {
     }
 
     @Override
+    
     public String toString() {
-        return valor + " de " + palo;
+    
+        String abreviaturaPalo;
+        //abreviamos los palos a letras para que entren en las cartas
+        switch (palo.toLowerCase()) {
+            case "espadas":
+                abreviaturaPalo = "E";
+                break;
+            case "oro":
+                abreviaturaPalo = "O";
+                break;
+            case "bastos":
+                abreviaturaPalo = "B";
+                break; 
+            case "copas":
+                abreviaturaPalo = "C";
+                break;
+            default:
+                abreviaturaPalo = " "; 
+        }
+        return valor + " " + abreviaturaPalo;  // Ejemplo: "7E" para "7 de Espadas"
     }
 }

@@ -11,7 +11,7 @@ public class Partida {
     //constructor
     public Partida(List<Jugador> jugadores) {
         this.jugadores = jugadores;
-        this.puntajeMaximo = 30; // Puntaje máximo por partida
+        this.puntajeMaximo = 1; // Puntaje máximo por partida
     }
     //metodos get y set
     public List<Jugador> getJugadores() {

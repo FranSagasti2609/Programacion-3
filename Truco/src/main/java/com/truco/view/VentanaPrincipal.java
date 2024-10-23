@@ -42,6 +42,15 @@ public class VentanaPrincipal extends JFrame {
         JButton iniciarButton = new JButton("Iniciar Partida");
         iniciarButton.addActionListener(e -> iniciarPartida());
         add(iniciarButton, BorderLayout.SOUTH);
+
+        //Botones de selección del modo de juego, jugador vs jugador o contra IA
+        /* 
+        JButton pvp = new JButton("Jugador vs Jugador");
+        add(pvp, BorderLayout.SOUTH);
+
+        JButton pvsIA = new JButton("Jugador vs IA");
+        add(pvsIA, BorderLayout.SOUTH);
+        */
     }
 
     private void iniciarPartida() {
@@ -79,7 +88,6 @@ public class VentanaPrincipal extends JFrame {
         return jugadores.indexOf(jugador) == turnoActual;
     }
     
-
 
     public void jugarCarta(Jugador jugador, Carta carta, JButton cartaButton) {
         // Verifica que sea el turno del jugador
@@ -148,6 +156,7 @@ public class VentanaPrincipal extends JFrame {
         turnoActual = jugadores.indexOf(ganador);
     }
 
+   
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             VentanaPrincipal ventana = new VentanaPrincipal();

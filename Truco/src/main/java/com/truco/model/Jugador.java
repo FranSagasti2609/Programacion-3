@@ -14,6 +14,7 @@ public class Jugador {
         this.nick = nick;
         this.puntaje = 0; //su puntaje arranca en cero
         this.cartas = new ArrayList<>();
+
     }
 
     //metodos get y set
